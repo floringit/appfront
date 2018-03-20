@@ -1,0 +1,7 @@
+#preview {
+    background: transparent;
+    flex: 0.4;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-59.000000, -296.000000)" fill="#1d1d1d">
+            <g id="SideMenu" transform="translate(-2.000000, 0.000000)">
+                <g id="Screens" transform="translate(50.000000, 296.000000)">
+                    <path d="M41,20 C41,21.104 40.104,22 39,22 L23,22 C21.896,22 21,21.104 21,20 L21,4 C21,2.896 21.896,2 23,2 L39,2 C40.104,2 41,2.896 41,4 L41,20 L41,20 Z M39,0 L23,0 C20.791,0 19,1.791 19,4 L19,20 C19,22.209 20.791,24 23,24 L39,24 C41.209,24 43,22.209 43,20 L43,4 C43,1.791 41.209,0 39,0 L39,0 Z M33,28 C33,29.104 32.104,30 31,30 L15,30 C13.896,30 13,29.104 13,28 L13,12 C13,10.896 13.896,10 15,10 L17,10 L17,8 L15,8 C12.791,8 11,9.791 11,12 L11,28 C11,30.209 12.791,32 15,32 L31,32 C33.209,32 35,30.209 35,28 L35,26 L33,26 L33,28 L33,28 Z" id="ScreensIcon"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

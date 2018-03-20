@@ -1,0 +1,82 @@
+.icon-ctn {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    margin-top: 8px;
+    margin-bottom: 24px;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    background: #d8d8d8;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+.change {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+}
+
+.info {
+    font-size: 10px;
+    color: #989898;
+}
+
+.screens-ctn {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 24px;
+}
+
+.screen-ctn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-right: 8px;
+    justify-content: flex-end;
+}
+
+.screen-ctn:last-child {
+    margin-right: 0;
+}
+
+.screen {
+    background: #d8d8d8;
+    height: 117px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 4px;
+}
+
+.screen-ctn:first-child {
+    flex: 0.6;
+}
+
+.screen-ctn:first-child .screen {
+    height: 117px;
+}
+
+.screen-ctn:nth-child(2) {
+    flex: 0.6;
+}
+
+.screen-ctn:nth-child(2) .screen {
+    height: 99px;
+}
+
+.screen-ctn:nth-child(3) {
+    flex: 0.8;
+}
+
+.screen-ctn:nth-child(3) .screen {
+    height: 144px;
+}
+
+.screen-ctn:nth-child(4) .screen {
+    height: 160px;
+}

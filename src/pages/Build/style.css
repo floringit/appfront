@@ -1,0 +1,7 @@
+#builder {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    background: url('../../../static/images/PreviewBackground.jpg') top left no-repeat;
+    background-size: cover;
+}

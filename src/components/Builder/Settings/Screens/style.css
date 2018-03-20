@@ -1,0 +1,15 @@
+.screens-settings {
+    padding: 24px 0;
+}
+
+.table-ctn {
+    padding: 24px 32px;
+    background: #fff;
+}
+
+.table-inner-ctn {
+}
+
+.screens-settings > p {
+    padding-left: 32px;
+}

@@ -1,0 +1,12 @@
+#activity {
+    background: #fcfcfc;
+    flex: 0.25;
+    box-shadow: -4px 0 10px 0 rgba(0, 0, 0, 0.03);
+    margin-left: auto;
+    position: relative;
+    z-index: 1;
+}
+
+#activities {
+    padding: 16px 32px;
+}

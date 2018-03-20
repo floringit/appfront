@@ -1,0 +1,36 @@
+.component-ctn {
+    flex-basis: 100px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    height: 70px;
+    margin: 8px;
+    background: #989898;
+    cursor: pointer;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 15px;
+    box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.07);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.component-ctn span {
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+
+.component-ctn > span:last-child {
+    display: none;
+    opacity: 0;
+}
+
+.component-ctn:hover span:first-child {
+    opacity: 0;
+    display: none;
+}
+
+.component-ctn:hover span:last-child {
+    opacity: 1;
+    display: block;
+}

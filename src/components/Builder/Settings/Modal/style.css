@@ -1,0 +1,30 @@
+#settings-modal {
+    background: #fcfcfc;
+    height: 95%;
+    width: 103%;
+    position: absolute;
+    top: 2.5%;
+    left: 0;
+    box-shadow: 4px 0 10px 0 rgba(0, 0, 0, 0.05);
+}
+
+.hide {
+    display: none;
+}
+
+.close {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+}
+
+.close svg {
+    width: 16px;
+    height: 16px;
+}
+
+.close svg #Utils {
+    fill: #1d1d1d;
+}

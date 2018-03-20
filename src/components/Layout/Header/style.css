@@ -1,0 +1,9 @@
+header {
+    height: 65px;
+    background: white;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.06);
+    position: relative;
+    z-index: 3;
+}
