@@ -6,6 +6,8 @@
 </template>
 
 <script>
+import Bus from '../../../../../../config/bus';
+
 export default {
   components: {
   },
@@ -21,7 +23,7 @@ export default {
   },
   methods: {
     add() {
-      this.$emit('update:showModal', true);
+      Bus.$emit('componentModal', true);
     }
   },
 };

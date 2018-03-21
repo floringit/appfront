@@ -10,7 +10,7 @@
         <list :items="defaultComponents" v-if="!selectedTab"></list>
         <list :items="{}" v-if="selectedTab"></list>
       </div>
-      <set-modal></set-modal>
+      <set-modal :show="showModal"></set-modal>
     </div>
 </template>
 
@@ -18,6 +18,7 @@
 import Tabs from '../Tabs/';
 import List from './List/';
 import SetModal from '../Modal/';
+import Bus from '../../../../config/bus';
 
 export default {
   components: {
@@ -28,6 +29,7 @@ export default {
   data() {
     return {
       selectedTab: 0,
+      showModal: false,
       defaultComponents: {
         layout: [
           {
@@ -64,7 +66,13 @@ export default {
       },
     };
   },
+  created() {
+    Bus.$on('componentModal', this.modal);
+  },
   methods: {
+    modal(show) {
+      this.showModal = show;
+    }
   },
 };
 </script>
