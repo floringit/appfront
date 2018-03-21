@@ -67,6 +67,7 @@
               ],
             ]"></tbl>
             <p v-if="selectedTab">No cancelled members.</p>
+            <a v-if="!selectedTab" id="add-member" href="#" class="btn btn-primary" @click.prevent="showAdd">Add member</a>
           </div>
         </div>
       </div>
@@ -88,6 +89,9 @@ export default {
     };
   },
   methods: {
+    showAdd() {
+
+    }
   },
 };
 </script>

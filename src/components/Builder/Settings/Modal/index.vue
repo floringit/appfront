@@ -11,6 +11,10 @@
             </g>
         </svg>
       </a>
+      <div class="title-wrapper" v-if="title">
+        <h2>{{ title }}</h2>
+      </div>
+      <slot></slot>
     </div>
 </template>
 
@@ -25,6 +29,10 @@ export default {
       type: Boolean,
       required: true,
     },
+    title: {
+      type: String,
+      required: false,
+    }
   },
   data() {
     return {

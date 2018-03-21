@@ -1,5 +1,5 @@
 #activity {
-    background: #fcfcfc;
+    background: rgba(252, 252, 252, .95);
     flex: 0.25;
     box-shadow: -4px 0 10px 0 rgba(0, 0, 0, 0.03);
     margin-left: auto;
@@ -14,5 +14,14 @@
 @media only screen and (max-width: 1400px)  {
   #activity {
       flex: 0.35;
+  }
+}
+
+@media only screen and (max-width: 1200px)  {
+  #activity {
+      position: absolute;
+      top: 60px;
+      right: 0;
+      height: 100%;
   }
 }

@@ -10,7 +10,7 @@
         <list :items="defaultComponents" v-if="!selectedTab"></list>
         <list :items="{}" v-if="selectedTab"></list>
       </div>
-      <set-modal :show="showModal"></set-modal>
+      <set-modal :show="showModal" :title="'Add component'"></set-modal>
     </div>
 </template>
 

@@ -3,7 +3,7 @@
       <div class="title-wrapper">
         <h2>Settings</h2>
         <tabs :items="[
-          'General', 'Branding'
+          'General', 'Branding', 'Design'
         ]" :selected.sync="selectedTab"></tabs>
       </div>
       <div class="settings-content">
@@ -12,7 +12,7 @@
             name="name"
             v-model.trim="application.name"
             placeholder="Application title" />
-          <branding v-if="selectedTab"></branding>
+          <branding v-if="selectedTab == 1"></branding>
           <general v-if="!selectedTab" :description.sync="application.description"></general>
           <div class="btn-ctn">
             <button name="submit" @click.prevent="save" class="btn btn-primary">Save</button>

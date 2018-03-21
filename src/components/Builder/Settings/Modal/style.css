@@ -1,16 +1,17 @@
 #settings-modal {
     background: #fcfcfc;
     height: 95%;
-    width: 97%;
+    width: 97.5%;
     position: absolute;
     top: 2.5%;
     left: 0;
     box-shadow: 4px 0 10px 0 rgba(0, 0, 0, 0.05);
     transition: all 0.4s ease;
+    z-index: 1;
 }
 
 #settings-modal.hide {
-    left: -95%;
+    left: -96%;
 }
 
 .close {
@@ -28,4 +29,8 @@
 
 .close svg #Utils {
     fill: #1d1d1d;
+}
+
+.modal-cnt {
+    padding: 24px;
 }
