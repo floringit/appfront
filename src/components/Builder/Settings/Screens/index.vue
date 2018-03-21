@@ -29,8 +29,8 @@
           </div>
         </div>
       </div>
-      <set-modal :show="showModal" :title="showModalEdit ? 'Edit screen' : 'Add screen'">
-        <edit-modal v-if="showModalEdit" />
+      <set-modal :show="showModal" :full="showModalAdd ? true : false" :title="showModalEdit ? 'Edit screen' : 'Add screen'">
+        <edit-modal v-if="showModalEdit && edited" :screen="edited" />
         <add-modal v-if="showModalAdd" />
       </set-modal>
     </div>
@@ -57,6 +57,7 @@ export default {
       showModal: false,
       showModalEdit: false,
       showModalAdd: false,
+      edited: null,
       selectedTab: 0,
       screens: null,
     };
@@ -70,14 +71,20 @@ export default {
     toggleModal(show) {
       this.showModal = show;
     },
-    showEdit() {
+    showEdit(id) {
+      this.edited = null;
       this.showModalAdd = false;
       this.showModalEdit = true;
+
       Bus.$emit('screenModal', true);
+
+      this.edited = this.screens[id];
     },
     showAdd() {
+      this.edited = null;
       this.showModalEdit = false;
       this.showModalAdd = true;
+
       Bus.$emit('screenModal', true);
     },
     getScreens() {

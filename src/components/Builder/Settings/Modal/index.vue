@@ -1,5 +1,8 @@
 <template>
-    <div id="settings-modal" :class="show ? '' : 'hide'">
+    <div id="settings-modal" :class="{
+      'hide': !show,
+      'full': full
+    }">
       <a href="#" class="close" @click.prevent="close">
         <svg viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -32,7 +35,11 @@ export default {
     title: {
       type: String,
       required: false,
-    }
+    },
+    full: {
+      type: Boolean,
+      required: false,
+    },
   },
   data() {
     return {

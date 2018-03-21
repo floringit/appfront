@@ -49,7 +49,7 @@
                 </g>
             </svg>
           </template>
-          <b-dropdown-item href="#" @click.prevent="action.callback" :key="ind" v-for="(action, ind) in row[_.size(columns)]">{{ action.name }}</b-dropdown-item>
+          <b-dropdown-item href="#" @click.prevent="action.callback(index)" :key="ind" v-for="(action, ind) in row[_.size(columns)]">{{ action.name }}</b-dropdown-item>
         </b-dropdown>
       </div>
     </div>
