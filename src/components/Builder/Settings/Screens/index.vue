@@ -7,9 +7,9 @@
         ]" :selected.sync="selectedTab"></tabs>
       </div>
       <div class="screens-settings">
-        <div class="table-ctn" v-if="!selectedTab">
+        <div class="table-ctn">
           <div class="table-inner-ctn">
-            <tbl :columns="[
+            <tbl v-if="!selectedTab" :sortable="false" :columns="[
               {
                 name: 'Name',
                 small: false,
@@ -31,6 +31,20 @@
                   link: '#',
                 },
                 '08/03/2018',
+                [
+                  {
+                    name: 'Edit',
+                    callback: showModalFn,
+                  },
+                  {
+                    name: 'Duplicate',
+                    callback: null,
+                  },
+                  {
+                    name: 'Remove',
+                    callback: null,
+                  },
+                ],
               ],
               [
                 'Contact',
@@ -39,6 +53,20 @@
                   link: '#',
                 },
                 '06/03/2018',
+                [
+                  {
+                    name: 'Edit',
+                    callback: showModalFn,
+                  },
+                  {
+                    name: 'Duplicate',
+                    callback: null,
+                  },
+                  {
+                    name: 'Remove',
+                    callback: null,
+                  },
+                ],
               ],
               [
                 'News fasdf asdf asdf asdfa sdfasdf asdf',
@@ -47,43 +75,58 @@
                   link: '#',
                 },
                 '03/03/2018',
+                [
+                  {
+                    name: 'Edit',
+                    callback: showModalFn,
+                  },
+                  {
+                    name: 'Duplicate',
+                    callback: null,
+                  },
+                  {
+                    name: 'Remove',
+                    callback: null,
+                  },
+                ],
               ],
-            ]" :actions="[
-              {
-                name: 'Edit',
-                callback: null,
-              },
-              {
-                name: 'Duplicate',
-                callback: null,
-              },
-              {
-                name: 'Remove',
-                callback: null,
-              },
             ]"></tbl>
+            <p v-if="selectedTab">No screens in trash.</p>
           </div>
         </div>
-        <p v-if="selectedTab">No screens in trash.</p>
       </div>
+      <set-modal :show="showModal"></set-modal>
     </div>
 </template>
 
 <script>
 import Tabs from '../Tabs/';
 import Tbl from '../Table/';
+import SetModal from '../Modal/';
+import Bus from '../../../../config/bus';
 
 export default {
   components: {
     Tabs,
     Tbl,
+    SetModal,
   },
   data() {
     return {
+      showModal: false,
       selectedTab: 0,
     };
   },
+  created() {
+    Bus.$on('screenModal', this.toggleModal);
+  },
   methods: {
+    toggleModal(show) {
+      this.showModal = show;
+    },
+    showModalFn() {
+      Bus.$emit('screenModal', true);
+    },
   },
 };
 </script>

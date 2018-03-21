@@ -1,15 +1,16 @@
 #settings-modal {
     background: #fcfcfc;
     height: 95%;
-    width: 103%;
+    width: 97%;
     position: absolute;
     top: 2.5%;
     left: 0;
     box-shadow: 4px 0 10px 0 rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
 }
 
-.hide {
-    display: none;
+#settings-modal.hide {
+    left: -95%;
 }
 
 .close {

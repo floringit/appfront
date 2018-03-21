@@ -121,6 +121,10 @@ a {
     flex: 0.4;
 }
 
+.column.column-hidden:first-child {
+    flex: 0;
+}
+
 .column:nth-child(2) {
     flex: 1.2;
     width: 100px;
@@ -130,6 +134,10 @@ a {
 #members-table .column:first-child {
     flex: 0.3;
     width: 220px;
+}
+
+#members-table .column.column-hidden:first-child {
+    flex: 0;
 }
 
 #members-table .column:nth-child(2) {

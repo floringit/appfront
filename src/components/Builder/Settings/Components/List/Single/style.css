@@ -4,15 +4,20 @@
     flex-grow: 0;
     height: 70px;
     margin: 8px;
-    background: #989898;
+    background: #ccc;
     cursor: pointer;
     color: #fff;
+    font-weight: bold;
     text-transform: uppercase;
     border-radius: 15px;
-    box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.07);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.04);
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.component-ctn:hover {
+    background-color: rgba(66, 147, 202, .8);
 }
 
 .component-ctn span {

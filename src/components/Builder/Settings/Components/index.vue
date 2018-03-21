@@ -44,7 +44,7 @@ export default {
         content: [
           {
             id: 3,
-            name: 'Paragraph',
+            name: 'Text',
           },
           {
             id: 4,
@@ -67,12 +67,12 @@ export default {
     };
   },
   created() {
-    Bus.$on('componentModal', this.modal);
+    Bus.$on('componentModal', this.toggleModal);
   },
   methods: {
-    modal(show) {
+    toggleModal(show) {
       this.showModal = show;
-    }
+    },
   },
 };
 </script>

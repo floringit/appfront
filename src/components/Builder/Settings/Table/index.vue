@@ -1,8 +1,8 @@
 <template>
   <div class="table" :id="id ? id : ''">
     <div class="table-header">
-      <div class="column">
-        <span class="column-ctn">No</span>
+      <div class="column" :class="sortable ? '' : 'column-hidden'">
+        <span class="column-ctn"></span>
       </div>
       <div class="column" :key="key" v-for="(col, key) in columns">
         <span class="column-ctn">{{ col.name }}</span>
@@ -11,15 +11,26 @@
         <span class="column-ctn">Actions</span>
       </div>
     </div>
-    <div class="row" :key="index" v-for="(row, index) in rows">
-      <div class="column">
-        {{ index + 1 }}.
+    <div class="row" :key="index" v-for="(row, index) in items">
+      <div class="column" :class="sortable ? '' : 'column-hidden'">
+        <svg v-if="sortable" class="drag-item" width="14px" height="18px" viewBox="0 0 14 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Action" transform="translate(-389.000000, -915.000000)">
+                    <g id="ic_swap_vert" transform="translate(384.000000, 912.000000)">
+                        <g id="Icon-24px">
+                            <path d="M16,17.01 L16,10 L14,10 L14,17.01 L11,17.01 L15,21 L19,17.01 L16,17.01 L16,17.01 Z M9,3 L5,6.99 L8,6.99 L8,14 L10,14 L10,6.99 L13,6.99 L9,3 L9,3 Z" id="Shape" fill="#000000"></path>
+                            <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </svg>
       </div>
-      <div class="column" :class="col.small ? 'small' : ''" :key="i" v-for="(col, i) in columns">
+      <div class="column no-drag-item" :class="col.small ? 'small' : ''" :key="i" v-for="(col, i) in columns">
         <strong v-if="!col.link">{{ row[i] }}</strong>
         <a v-if="col.link" :href="row[i].link"><strong>{{ row[i].value }}</strong></a>
       </div>
-      <div class="column">
+      <div class="column no-drag-item">
         <b-dropdown variant="link" size="lg" no-caret>
           <template slot="button-content">
             <svg width="22px" height="4px" viewBox="0 0 22 4" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -38,7 +49,7 @@
                 </g>
             </svg>
           </template>
-          <b-dropdown-item href="#" :key="ind" v-for="(action, ind) in actions">{{ action.name }}</b-dropdown-item>
+          <b-dropdown-item href="#" @click.prevent="action.callback" :key="ind" v-for="(action, ind) in row[_.size(columns)]">{{ action.name }}</b-dropdown-item>
         </b-dropdown>
       </div>
     </div>
@@ -46,8 +57,11 @@
 </template>
 
 <script>
+import Draggable from 'vuedraggable';
+
 export default {
   components: {
+    Draggable,
   },
   props: {
     columns: {
@@ -58,18 +72,34 @@ export default {
       type: Array,
       required: true,
     },
-    actions: {
-      type: Array,
-      required: true,
-    },
     id: {
       type: String,
       required: false,
     },
+    sortable: {
+      type: Boolean,
+      required: true,
+    },
   },
   data() {
     return {
+      sortOptions: {
+        group: 'rows',
+      },
+      drag: false,
+      itemsDefault: null,
     };
+  },
+  computed: {
+    items: {
+      get: function() {
+        this.itemsDefault = this.itemsDefault == null ? this.rows : this.itemsDefault;
+        return this.itemsDefault;
+      },
+      set: function(newValue) {
+        this.itemsDefault = newValue;
+      },
+    },
   },
   methods: {
   },

@@ -33,6 +33,7 @@ export default {
   methods: {
     close() {
       Bus.$emit('componentModal', false);
+      Bus.$emit('screenModal', false);
     }
   },
 };

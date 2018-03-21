@@ -1,0 +1,10 @@
+.drag-item {
+    width: 10px;
+    height: 15px;
+    cursor: move;
+    cursor: -webkit-grabbing;
+}
+
+.drag-item path {
+    fill: #989898;
+}
