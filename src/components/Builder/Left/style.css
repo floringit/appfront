@@ -33,11 +33,17 @@ ul li a {
     transition: all 0.5s ease;
 }
 
-ul li a img {
-    transition: all 0.5s ease;
+ul li a svg {
+    fill: #a4a4a4;
     width: 20px;
+    height: 20px;
     margin: 0 auto;
     margin-bottom: 8px;
+    transition: all 0.5s ease;
+}
+
+ul li a svg #Desktop-HD {
+    fill: #a4a4a4;
 }
 
 ul li.selected {
@@ -49,12 +55,12 @@ ul li.selected a {
     color: #fff;
 }
 
-ul li.selected a img {
-    filter: invert(1);
+ul li.selected a svg #Desktop-HD {
+    fill: #fff;
 }
 
-ul li:not(.selected) a:hover img {
-    filter: invert(.5) sepia(1) saturate(5) hue-rotate(175deg);
+ul li:not(.selected) a:hover svg #Desktop-HD {
+    fill: #4293ca;
 }
 
 ul li:not(.selected) a:hover {

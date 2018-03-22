@@ -1,5 +1,5 @@
 <template>
-    <div id="settings-wrapper">
+    <div id="settings-wrapper" v-bar>
       <settings v-if="display === 0"></settings>
       <components v-if="display === 1"></components>
       <screens v-if="display === 2"></screens>

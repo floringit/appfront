@@ -22,6 +22,16 @@
     left: -96%;
 }
 
+@media only screen and (max-width: 1400px)  {
+  #settings-modal {
+    width: 97.5%;
+  }
+
+    #settings-modal.hide {
+        left: -96%;
+    }
+}
+
 .close {
     width: 15px;
     height: 15px;

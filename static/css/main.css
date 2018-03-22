@@ -215,3 +215,35 @@ div.dropdown-menu .dropdown-item {
     color: #1d1d1d;
     outline: none;
 }
+
+.vb > .vb-dragger {
+    z-index: 5;
+    width: 10px;
+    right: 0;
+}
+
+.vb > .vb-dragger > .vb-dragger-styler {
+    background-color: rgba(0, 0, 0,.1);
+    margin: 10px 5px 10px 0;
+    height: calc(100% - 10px);
+    display: block;
+    border-radius: 15px;
+}
+
+.vb.vb-scrolling-phantom > .vb-dragger > .vb-dragger-styler {
+    background-color: rgba(0, 0, 0,.3);
+}
+
+.vb > .vb-dragger:hover > .vb-dragger-styler {
+    background-color: rgba(0, 0, 0,.3);
+    height: 100%;
+}
+
+.vb.vb-dragging > .vb-dragger > .vb-dragger-styler {
+    background-color: rgba(0, 0, 0,.3);
+    height: 100%;
+}
+
+.vb.vb-dragging-phantom > .vb-dragger > .vb-dragger-styler {
+    background-color: rgba(0, 0, 0,.3);
+}
